@@ -72,7 +72,7 @@ jobs:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
         resourceGroupName: ${{ secrets.AZURE_RG }}
         template: ./bicep/main.bicep
-        parameters: webAppName=${{ secrets.AZURE_APP_NAME }}
+        parameters: webAppName='cayersBicepSampleApp'
         failOnStdErr: false
    
     - name: Download App
