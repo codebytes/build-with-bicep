@@ -35,7 +35,7 @@ jobs:
       run: dotnet test --no-build --verbosity normal ${{ env.project }}
       working-directory: ${{ env.path }}
     - name: dotnet publish
-      run: dotnet publish -c Release ${{ env.project }} -o ${{ env.path }}/webapp
+      run: dotnet publish -c Release ${{ env.project }} -o webapp
       working-directory: ${{ env.path }}
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v2
