@@ -5,8 +5,9 @@ on:
   push:
     branches:
       - main
-    paths:
-      - '15-ci-cd/**'
+  pull_request:
+    branches:
+      - main
 
 permissions:
       id-token: write
@@ -72,7 +73,7 @@ jobs:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
         resourceGroupName: ${{ secrets.AZURE_RG }}
         template: ./bicep/main.bicep
-        parameters: webAppName='cayersBicepSampleApp'
+        parameters: webAppName=cayersBicepSampleApp
         failOnStdErr: false
    
     - name: Download App
