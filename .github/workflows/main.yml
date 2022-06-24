@@ -58,7 +58,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: bicep
-        path: bicep
+        path: ${{ env.path }}/bicep
 
       # Log into Azure
     - uses: azure/login@v1
