@@ -1,0 +1,95 @@
+name: Build and deploy ASP.Net Core app to Azure Web App 
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - cicd
+    paths:
+      - '!**'
+      - '.github/workflows'
+      - '15-ci-cd/**'
+
+permissions:
+      id-token: write
+      contents: read
+      
+env:
+  path: '15-ci-cd'
+  project: 'SampleApp.sln'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'
+    - name: Restore dependencies
+      run: dotnet restore
+      working-directory: ${{ env.path }}
+    - name: Build with dotnet
+      run: dotnet build --no-restore --configuration Release ${{ env.project }}
+      working-directory: ${{ env.path }}
+    - name: Test
+      run: dotnet test --no-build --verbosity normal ${{ env.project }}
+      working-directory: ${{ env.path }}
+    - name: dotnet publish
+      run: dotnet publish -c Release ${{ env.project }} -o ${{ env.path }}/webapp
+      working-directory: ${{ env.path }}
+    - name: Upload artifact for deployment job
+      uses: actions/upload-artifact@v2
+      with:
+        name: app
+        path: ${{ env.path }}/webapp
+    - uses: actions/upload-artifact@v1
+      with:
+        name: bicep
+        path: bicep      
+  deploy-webapp:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+     # Checkout code
+    - name: Download bicep
+      uses: actions/download-artifact@v2
+      with:
+        name: bicep
+        path: bicep
+
+      # Log into Azure
+    - uses: azure/login@v1
+      with:
+        client-id: ${{ secrets.AZURE_CLIENT_ID }}
+        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION }}
+
+      # Deploy Bicep file
+    - name: deploy
+      id: deploy
+      uses: azure/arm-deploy@v1
+      with:
+        subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+        resourceGroupName: ${{ secrets.AZURE_RG }}
+        template: ./bicep/main.bicep
+        parameters: webAppName=${{ secrets.AZURE_APP_NAME }}
+        failOnStdErr: false
+   
+    - name: Download App
+      uses: actions/download-artifact@v2
+      with:
+        name: app  
+        path: app
+
+    - name: 'Run Azure webapp deploy action using publish profile credentials'
+      uses: azure/webapps-deploy@v2
+      with: 
+        app-name: ${{ steps.deploy.outputs.webAppName }} # Replace with your app name
+        package: 'app'
+    
+    - name: logout
+      run: |
+        az logout
