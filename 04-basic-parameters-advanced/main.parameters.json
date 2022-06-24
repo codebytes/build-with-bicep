@@ -1,0 +1,28 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "appServicePlanInstanceCount": {
+        "value": 3
+      },
+      "appServicePlanSku": {
+        "value": {
+          "name": "P1v3",
+          "tier": "PremiumV3"
+        }
+      },
+      "cosmosDBAccountLocations": {
+        "value": [
+          {
+            "locationName": "australiaeast"
+          },
+          {
+            "locationName": "southcentralus"
+          },
+          {
+            "locationName": "westeurope"
+          }
+        ]
+      }
+    }
+  }
