@@ -5,10 +5,7 @@ on:
   push:
     branches:
       - main
-      - cicd
     paths:
-      - '!**'
-      - '.github/workflows'
       - '15-ci-cd/**'
 
 permissions:
@@ -58,7 +55,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: bicep
-        path: ${{ env.path }}/bicep
+        path: bicep
 
       # Log into Azure
     - uses: azure/login@v1
