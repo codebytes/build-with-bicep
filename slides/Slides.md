@@ -64,13 +64,79 @@ style: |
 ![bg left](./img/background.jpg)
 
 # Agenda
+- What is IaC? 
 - What is Bicep?
+- How does Bicep Compare to ARM and Terraform?
+
+---
+
+# What is IaC?
+Infrastructure as Code
+
+![bg right](img/background.jpg)
+
+---
+
+# IaC
+
+Infrastructure as Code (IaC) is the management of infrastructure (networks, virtual machines, load balancers, and connection topology) in a descriptive model, using version control to store the files.
+
+---
+
+# IaC Styles
+
+<div class="columns">
+<div>
+
+## Imperative
+
+- Do what I want
+- Do X in the system
+- List of commands
+- Manage your own dependencies
+- Polling to handling timing
+
+</div>
+<div>
+
+## Declarative
+
+- What I want
+- Make the system look like X
+- List of resources / configuration
+- System knows the dependencies
+- System knows how to handle timings
+
+</div>
+
+</div>
+
+---
+
+![bg fit](./img/imp-vs-decl.png)
+
+---
+
+# Bicep Features
+
+- Simpler Syntax. No JSON noise
+- Declarative Syntax
+- Modularity
+- Built for tool-ability
+- Convert existing templates
+
+___
+
+# Bicep and ARM
+
+![bg height:90% right](./img/bicep-arm.png)
+
 
 ---
 
 # Questions
 
-![bg auto](./img/background.jpg)
+![bg](./img/background.jpg)
 ![bg](./img/owl.png)
 
 ---
