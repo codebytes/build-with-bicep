@@ -42,6 +42,15 @@ style: |
     color: orange;
   }
   @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
+
+---
+
+![bg](./img/THATConference/That%20Conference%20Branding%20Slide.png)
+
+---
+
+![bg](./img/THATConference/That%20Conference%20Partners%20Slide.png)
+
 ---
 
 ![bg](./img/background.jpg)
@@ -163,4 +172,12 @@ ___
 </div>
 
 </div>
+
+---
+
+![bg](./img/THATConference/THAT.us.png)
+
+---
+
+![bg](./img/THATConference/THAT%20Dates.png)
 
