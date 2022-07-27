@@ -38,9 +38,29 @@ jobs:
         parameters: environmentType=${{ env.ENVIRONMENT_TYPE }}
         deploymentMode: Validate
 
-  deploy:
+  preview:
     runs-on: ubuntu-latest
     needs: [lint, validate]
+    steps:
+    - uses: actions/checkout@v2
+    - uses: azure/login@v1
+      name: Sign in to Azure
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - uses: azure/arm-deploy@v1
+      name: Run what-if
+      with:
+        failOnStdErr: false
+        resourceGroupName: ${{ env.AZURE_RESOURCEGROUP_NAME }}
+        template: toy-sample/deploy/main.bicep
+        parameters: >
+          environmentType=${{ env.ENVIRONMENT_TYPE }}
+        additionalArguments: --what-if
+
+  deploy:
+    runs-on: ubuntu-latest
+    environment: Website
+    needs: preview
     steps:
     - uses: actions/checkout@v2
     - uses: azure/login@v1
