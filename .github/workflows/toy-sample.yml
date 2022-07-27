@@ -6,7 +6,7 @@ on:
     branches: 
       - main
     paths: 
-      - 'deploy/**'
+      - 'toy-sample/deploy/**'
   workflow_dispatch:
 
 
@@ -26,5 +26,5 @@ jobs:
       with:
         deploymentName: ${{ github.run_number }}
         resourceGroupName: ${{ env.AZURE_RESOURCEGROUP_NAME }}
-        template: ./deploy/main.bicep
+        template: ./toy-sample/deploy/main.bicep
         parameters: environmentType=${{ env.ENVIRONMENT }}
