@@ -3,44 +3,16 @@ marp: true
 theme: default
 footer: '@Chris_L_Ayers - https://chrislayers.com'
 style: |
+  table {
+      display: table;
+      width: 100%;
+  }
   .columns {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
   }
-  .fa-th-large {
-    color: blue;
-  }
-  .fa-users {
-    color: orange;
-  }
-  .fa-refresh {
-    color: green;
-  }
-  .fa-flask {
-    color: brown;
-  }
-  .fa-ban {
-    color: red;
-  }
-  .fa-dollar {
-    color: orange;
-  }
-  .fa-gears {
-    color: brown;
-  }
-  .fa-code {
-    color: blue;
-  }
-  .fa-flag {
-    color: green;
-  }
-  .fa-line-chart {
-    color: red;
-  }
-  .fa-bar-chart {
-    color: orange;
-  }
+
   @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
 
 ---
@@ -53,7 +25,9 @@ style: |
 
 ---
 
-![bg](./img/background.jpg)
+![bg left:40%](./img/background.jpg)
+
+![auto](./img/bicep-logo.png)
 # Building in the Cloud with Bicep
 ## Chris Ayers
 
@@ -70,25 +44,20 @@ style: |
 - GitHub: [Codebytes](https://github.com/codebytes)
 
 ---
-![bg left](./img/background.jpg)
+
+![bg right:40% auto](./img/bicep-logo.png)
 
 # Agenda
-- What is IaC? 
+- What is IaC?
 - What is Bicep?
-- How does Bicep Compare to ARM and Terraform?
-
+- What is Azure Resource Manager? 
+- Demos
 ---
-
-# What is IaC?
-Infrastructure as Code
 
 ![bg right](img/background.jpg)
 
----
-
-# IaC
-
-Infrastructure as Code (IaC) is the management of infrastructure (networks, virtual machines, load balancers, and connection topology) in a descriptive model, using version control to store the files.
+# What is IaC?
+Infrastructure as Code (IaC) is the managing and provisioning of infrastructure through code instead of through manual processes.
 
 ---
 
@@ -126,6 +95,48 @@ Infrastructure as Code (IaC) is the management of infrastructure (networks, virt
 
 ---
 
+# Popular IaC Technologies
+
+
+<div class="columns">
+<div>
+
+## Native
+
+- ARM / Bicep
+- AWS Cloud Formation
+- Google Cloud Deployment Manager
+
+</div>
+<div>
+
+## Non Native
+
+- Terraform
+- Pulumi
+- Vagrant
+- Chef
+- Puppet
+- Ansible
+- SaltStack 
+  
+</div>
+</div>
+
+
+---
+
+# ARM / Bicep / Terraform
+
+Feature | ARM | Bicep | Terraform
+---|---|---|---
+Format | Json | DSL | DSL - HCL (HashiCorp Language) 
+Target | Azure | Azure | Multi-Cloud or On-Prem through providers
+Support | Native<p>Day-0 | Native<p>Day-0 | Support can lag with AzureRM<p> Day-0 with AzApi 
+State | Azure | Azure | State File via files, Blob, or Terraform Cloud
+
+---
+
 # Bicep Features
 
 - Simpler Syntax. No JSON noise
@@ -140,6 +151,42 @@ ___
 
 ![bg height:90% right](./img/bicep-arm.png)
 
+---
+
+# ARM Templates
+## Json & Bicep
+
+![right bg fit](./img/2-convert.png)
+
+---
+
+# Azure Resource Manager (ARM)
+
+![right:60% bg height:65%](./img/2-hierarchy.png)
+
+---
+
+# Azure Resource IDs
+
+![right:60% fit bg](./img/child-resource-id.png)
+
+---
+
+# Parameter Design
+
+![left  vertical bg fit](./img/3-free-form-configuration.png)
+![right bg fit](./img/3-configuration-map.png)
+
+---
+
+# File Layout
+
+![left:40%  bg fit](./img/4-group-element-type.png)
+![right:70% bg fit](./img/4-group-resource.png)
+
+---
+
+# Demos
 
 ---
 
