@@ -5,9 +5,8 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+    paths: 
+      - '15-ci-cd/**'
 
 permissions:
       id-token: write
