@@ -1,6 +1,14 @@
 name: deploy-toy-website
+concurrency: toy-company
 
-on: [workflow_dispatch]
+on: 
+  push:
+    branches: 
+      - main
+    paths: 
+      - 'deploy/**'
+  workflow_dispatch:
+
 
 env:
     AZURE_RESOURCEGROUP_NAME: ToyWebsite
