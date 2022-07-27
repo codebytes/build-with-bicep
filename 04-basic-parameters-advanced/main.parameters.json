@@ -3,26 +3,13 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "appServicePlanInstanceCount": {
-        "value": 3
+        "value": 2
       },
       "appServicePlanSku": {
         "value": {
-          "name": "P1v3",
-          "tier": "PremiumV3"
+          "name": "S1",
+          "tier": "Standard"
         }
-      },
-      "cosmosDBAccountLocations": {
-        "value": [
-          {
-            "locationName": "australiaeast"
-          },
-          {
-            "locationName": "southcentralus"
-          },
-          {
-            "locationName": "westeurope"
-          }
-        ]
       }
     }
   }

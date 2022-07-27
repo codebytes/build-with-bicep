@@ -1,14 +1,16 @@
+param location string = resourceGroup().location
+
 resource vnet 'Microsoft.Network/virtualNetworks@2018-10-01' = {
   name: 'vnet-001'
-  location: resourceGroup().location
+  location: location
   tags: {
-    'CostCenter': '234'
-    'Owner': 'Team A'
+    CostCenter: '234'
+    Owner: 'Team B'
   }
   properties: {
     addressSpace: {
       addressPrefixes: [
-        '10.0.0.0/16'
+        '10.0.0.0/15'
       ]
     }
     enableVmProtection: false
@@ -23,7 +25,7 @@ resource vnet 'Microsoft.Network/virtualNetworks@2018-10-01' = {
       {
         name: 'subnet002'
         properties: {
-          addressPrefix: '10.0.1.0/24'
+          addressPrefix: '10.0.2.0/24'
         }
       }
     ]

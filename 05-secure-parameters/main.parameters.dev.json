@@ -17,7 +17,7 @@
     "sqlServerAdministratorLogin": {
       "reference": {
         "keyVault": {
-          "id": "YOUR-KEY-VAULT-RESOURCE-ID"
+          "id": "/subscriptions/f769df16-1530-4206-b8a9-2b0a2cb9cc38/resourceGroups/rg-bicep-kv/providers/Microsoft.KeyVault/vaults/cayers-bicep-kv"
         },
         "secretName": "sqlServerAdministratorLogin"
       }
@@ -25,7 +25,7 @@
     "sqlServerAdministratorPassword": {
       "reference": {
         "keyVault": {
-          "id": "YOUR-KEY-VAULT-RESOURCE-ID"
+          "id": "/subscriptions/f769df16-1530-4206-b8a9-2b0a2cb9cc38/resourceGroups/rg-bicep-kv/providers/Microsoft.KeyVault/vaults/cayers-bicep-kv"
         },
         "secretName": "sqlServerAdministratorPassword"
       }
