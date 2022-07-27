@@ -1,10 +1,10 @@
-@description('The Azure region into which the resources should be deployed.')
+@description('The location into which your Azure resources should be deployed.')
 param location string = resourceGroup().location
 
-@description('The type of environment. This must be nonprod or prod.')
+@description('Select the type of environment you want to provision. Allowed values are Production and Test.')
 @allowed([
-  'nonprod'
-  'prod'
+  'Production'
+  'Test'
 ])
 param environmentType string
 
@@ -12,74 +12,83 @@ param environmentType string
 @maxLength(13)
 param resourceNameSuffix string = uniqueString(resourceGroup().id)
 
+// Define the names for resources.
 var appServiceAppName = 'toy-website-${resourceNameSuffix}'
-var appServicePlanName = 'toy-website-plan'
-var toyManualsStorageAccountName = 'toyweb${resourceNameSuffix}'
+var appServicePlanName = 'toy-website'
+var applicationInsightsName = 'toywebsite'
+var storageAccountName = 'mystorage${resourceNameSuffix}'
 
 // Define the SKUs for each component based on the environment type.
 var environmentConfigurationMap = {
-  nonprod: {
-    appServiceApp: {
-      alwaysOn: false
-    }
+  Production: {
     appServicePlan: {
       sku: {
-        name: 'F1'
+        name: 'S1'
         capacity: 1
       }
     }
-    toyManualsStorageAccount: {
+    storageAccount: {
       sku: {
         name: 'Standard_LRS'
       }
     }
   }
-  prod: {
-    appServiceApp: {
-      alwaysOn: true
-    }
+  Test: {
     appServicePlan: {
       sku: {
-        name: 'S1'
-        capacity: 2
+        name: 'F1'
       }
     }
-    toyManualsStorageAccount: {
+    storageAccount: {
       sku: {
-        name: 'Standard_ZRS'
+        name: 'Standard_GRS'
       }
     }
   }
 }
-var toyManualsStorageAccountConnectionString = 'DefaultEndpointsProtocol=https;AccountName=${toyManualsStorageAccount.name};EndpointSuffix=${environment().suffixes.storage};AccountKey=${toyManualsStorageAccount.listKeys().keys[0].value}'
 
-resource appServicePlan 'Microsoft.Web/serverFarms@2020-06-01' = {
+resource appServicePlan 'Microsoft.Web/serverfarms@2021-01-15' = {
   name: appServicePlanName
   location: location
   sku: environmentConfigurationMap[environmentType].appServicePlan.sku
 }
 
-resource appServiceApp 'Microsoft.Web/sites@2020-06-01' = {
+resource appServiceApp 'Microsoft.Web/sites@2021-01-15' = {
   name: appServiceAppName
   location: location
   properties: {
     serverFarmId: appServicePlan.id
-    httpsOnly: true
     siteConfig: {
-      alwaysOn: environmentConfigurationMap[environmentType].appServiceApp.alwaysOn
       appSettings: [
         {
-          name: 'ToyManualsStorageAccountConnectionString'
-          value: toyManualsStorageAccountConnectionString
+          name: 'APPINSIGHTS_INSTRUMENTATIONKEY'
+          value: applicationInsights.properties.InstrumentationKey
+        }
+        {
+          name: 'APPLICATIONINSIGHTS_CONNECTION_STRING'
+          value: applicationInsights.properties.ConnectionString
         }
       ]
     }
   }
 }
 
-resource toyManualsStorageAccount 'Microsoft.Storage/storageAccounts@2021-02-01' = {
-  name: toyManualsStorageAccountName
+resource applicationInsights 'Microsoft.Insights/components@2020-02-02' = {
+  name: applicationInsightsName
+  location: location
+  kind: 'web'
+  properties: {
+    Application_Type: 'web'
+    Request_Source: 'rest'
+    Flow_Type: 'Bluefield'
+  }
+}
+
+resource storageAccount 'Microsoft.Storage/storageAccounts@2021-04-01' = {
+  name: storageAccountName
   location: location
   kind: 'StorageV2'
-  sku: environmentConfigurationMap[environmentType].toyManualsStorageAccount.sku
+  sku: environmentConfigurationMap[environmentType].storageAccount.sku
 }
+
+output appServiceAppHostName string = appServiceApp.properties.defaultHostName
