@@ -19,7 +19,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run Bicep linter
-      run: az bicep build --file deploy/main.bicep
+      run: az bicep build --file toy-sample/deploy/main.bicep
 
   validate: 
     runs-on: ubuntu-latest
@@ -34,7 +34,7 @@ jobs:
       with:
         deploymentName: ${{ github.run_number }}
         resourceGroupName: ${{ env.AZURE_RESOURCEGROUP_NAME }}
-        template: ./deploy/main.bicep
+        template: ./toy-sample/deploy/main.bicep
         parameters: environmentType=${{ env.ENVIRONMENT_TYPE }}
         deploymentMode: Validate
 
@@ -53,5 +53,5 @@ jobs:
         failOnStdErr: false
         deploymentName: ${{ github.run_number }}
         resourceGroupName: ${{ env.AZURE_RESOURCEGROUP_NAME }}
-        template: ./deploy/main.bicep
+        template: ./toy-sample/deploy/main.bicep
         parameters: environmentType=${{ env.ENVIRONMENT_TYPE }}
