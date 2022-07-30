@@ -17,14 +17,6 @@ style: |
 
 ---
 
-![bg](./img/THATConference/That%20Conference%20Branding%20Slide.png)
-
----
-
-![bg](./img/THATConference/That%20Conference%20Partners%20Slide.png)
-
----
-
 ![bg left:40%](./img/background.jpg)
 
 ![auto](./img/bicep-logo.png)
@@ -139,11 +131,11 @@ State | Azure | Azure | State File via files, Blob, or Terraform Cloud
 
 # Bicep Features
 
-- Simpler Syntax. No JSON noise
-- Declarative Syntax
-- Modularity
-- Built for tool-ability
-- Convert existing templates
+### <i class="fa fa-code"></i> Simpler Syntax. No JSON noise
+### <i class="fa fa-object-group"></i> Declarative Syntax
+### <i class="fa fa-th-large"></i> Modularity
+### <i class="fa fa-cogs"></i> Built for tool-ability
+### <i class="fa fa-exchange"></i> Convert existing templates
 
 ___
 
@@ -219,12 +211,3 @@ ___
 </div>
 
 </div>
-
----
-
-![bg](./img/THATConference/THAT.us.png)
-
----
-
-![bg](./img/THATConference/THAT%20Dates.png)
-
