@@ -17,14 +17,6 @@ style: |
 
 ---
 
-![bg](./img/THATConference/That%20Conference%20Branding%20Slide.png)
-
----
-
-![bg](./img/THATConference/That%20Conference%20Partners%20Slide.png)
-
----
-
 ![bg left:40%](./img/background.jpg)
 
 ![auto](./img/bicep-logo.png)
@@ -219,12 +211,4 @@ ___
 </div>
 
 </div>
-
----
-
-![bg](./img/THATConference/THAT.us.png)
-
----
-
-![bg](./img/THATConference/THAT%20Dates.png)
 
