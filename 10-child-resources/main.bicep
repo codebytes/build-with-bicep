@@ -1,12 +1,12 @@
-param cosmosDBAccountName string = 'toyrnd-${uniqueString(resourceGroup().id)}'
+param cosmosDBAccountName string = 'bwb-${uniqueString(resourceGroup().id)}'
 param cosmosDBDatabaseThroughput int = 400
 param location string = resourceGroup().location
-param storageAccountName string
+param storageAccountName string = 'bwbsa${uniqueString(resourceGroup().id)}'
 
 var cosmosDBDatabaseName = 'FlightTests'
 var cosmosDBContainerName = 'FlightTests'
 var cosmosDBContainerPartitionKey = '/droneId'
-var logAnalyticsWorkspaceName = 'ToyLogs'
+var logAnalyticsWorkspaceName = 'bwbLogs'
 var cosmosDBAccountDiagnosticSettingsName = 'route-logs-to-log-analytics'
 var storageAccountBlobDiagnosticSettingsName = 'route-logs-to-log-analytics'
 
@@ -52,8 +52,9 @@ resource cosmosDBDatabase 'Microsoft.DocumentDB/databaseAccounts/sqlDatabases@20
   }
 }
 
-resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2020-03-01-preview' existing = {
+resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2020-03-01-preview' = {
   name: logAnalyticsWorkspaceName
+  location: location
 }
 
 resource cosmosDBAccountDiagnostics 'Microsoft.Insights/diagnosticSettings@2017-05-01-preview' = {

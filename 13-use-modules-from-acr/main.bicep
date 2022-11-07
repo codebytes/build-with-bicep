@@ -1,16 +1,16 @@
 @description('The Azure region into which the resources should be deployed.')
-param location string = 'westus3'
+param location string = 'eastus'
 
 @description('The name of the App Service app.')
-param appServiceAppName string = 'dog-${uniqueString(resourceGroup().id)}'
+param appServiceAppName string = 'bwb-${uniqueString(resourceGroup().id)}'
 
 @description('The name of the App Service plan SKU.')
 param appServicePlanSkuName string = 'F1'
 
-var appServicePlanName = 'toy-dog-plan'
+var appServicePlanName = 'bwb-plan'
 
 module website 'br:cayersbicepacr.azurecr.io/website:v1' = {
-  name: 'toy-dog-website'
+  name: 'bwb-website'
   params: {
     appServiceAppName: appServiceAppName
     appServicePlanName: appServicePlanName
@@ -20,7 +20,7 @@ module website 'br:cayersbicepacr.azurecr.io/website:v1' = {
 }
 
 module cdn 'br:cayersbicepacr.azurecr.io/cdn:v1' = {
-  name: 'toy-dog-cdn'
+  name: 'bwb-cdn'
   params: {
     httpsOnly: true
     originHostName: website.outputs.appServiceAppHostName

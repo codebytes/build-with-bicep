@@ -9,7 +9,7 @@ param environmentName string = 'dev'
 @description('The unique name of the solution. This is used to ensure that resource names are unique.')
 @minLength(5)
 @maxLength(30)
-param solutionName string = 'toyhr${uniqueString(resourceGroup().id)}'
+param solutionName string = 'bwb${uniqueString(resourceGroup().id)}'
 
 @description('The number of App Service plan instances.')
 @minValue(1)
@@ -20,7 +20,7 @@ param appServicePlanInstanceCount int = 1
 param appServicePlanSku object
 
 @description('The Azure region into which the resources should be deployed.')
-param location string = 'westus3'
+param location string = 'eastus'
 
 @secure()
 @description('The administrator login username for the SQL server.')

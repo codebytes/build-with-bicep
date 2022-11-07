@@ -31,10 +31,10 @@ param tags object = {
 var appServiceAppName = 'webSite${resourceNameSuffix}'
 var appServicePlanName = 'AppServicePLan'
 var sqlServerName = 'sqlserver${resourceNameSuffix}'
-var sqlDatabaseName = 'ToyCompanyWebsite'
+var sqlDatabaseName = 'bwb'
 var managedIdentityName = 'WebSite'
 var applicationInsightsName = 'AppInsights'
-var storageAccountName = 'toywebsite${resourceNameSuffix}'
+var storageAccountName = 'bwbsa${resourceNameSuffix}'
 var blobContainerNames = [
   'productspecs'
   'productmanuals'

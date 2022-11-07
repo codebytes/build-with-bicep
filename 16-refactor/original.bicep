@@ -30,8 +30,8 @@ param container1Name string = 'productspecs'
 param productmanualsName string = 'productmanuals'
 
 var hostingPlanName = 'hostingplan${uniqueString(resourceGroup().id)}'
-var sqlserverName = 'toywebsite${uniqueString(resourceGroup().id)}'
-var storageAccountName = 'toywebsite${uniqueString(resourceGroup().id)}'
+var sqlserverName = 'bwbSql${uniqueString(resourceGroup().id)}'
+var storageAccountName = 'bwbsa${uniqueString(resourceGroup().id)}'
 
 resource storageAccount 'Microsoft.Storage/storageAccounts@2019-06-01' = {
   name: storageAccountName
@@ -64,7 +64,7 @@ resource sqlserver 'Microsoft.Sql/servers@2019-06-01-preview' = {
   }
 }
 
-var databaseName = 'ToyCompanyWebsite'
+var databaseName = 'bwb'
 resource sqlserverName_databaseName 'Microsoft.Sql/servers/databases@2020-08-01-preview' = {
   name: '${sqlserver.name}/${databaseName}'
   location: location

@@ -4,13 +4,13 @@ resource vnet 'Microsoft.Network/virtualNetworks@2018-10-01' = {
   name: 'vnet-001'
   location: location
   tags: {
-    CostCenter: '234'
-    Owner: 'Team B'
+    CostCenter: '123'
+    Owner: 'Team A'
   }
   properties: {
     addressSpace: {
       addressPrefixes: [
-        '10.0.0.0/15'
+        '10.0.0.0/16'
       ]
     }
     enableVmProtection: false
@@ -25,7 +25,7 @@ resource vnet 'Microsoft.Network/virtualNetworks@2018-10-01' = {
       {
         name: 'subnet002'
         properties: {
-          addressPrefix: '10.0.2.0/24'
+          addressPrefix: '10.0.1.0/24'
         }
       }
     ]
