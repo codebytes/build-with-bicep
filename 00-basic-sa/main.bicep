@@ -1,5 +1,5 @@
 resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {
-  name: 'toylaunchstoragecayers'
+  name: 'buildwithbicepcayers'
   location: 'eastus'
   sku: {
     name: 'Standard_LRS'

@@ -1,5 +1,5 @@
 resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {
-  name: 'toylaunchstoragecayers'
+  name: 'buildwithbicepcayers'
   location: 'eastus'
   sku: {
     name: 'Standard_LRS'
@@ -12,7 +12,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {
 
 
 resource appServicePlan 'Microsoft.Web/serverFarms@2021-03-01' = {
-  name: 'toy-product-launch-plan-starter'
+  name: 'build-with-bicep-plan'
   location: 'eastus'
   sku: {
     name: 'F1'
@@ -20,7 +20,7 @@ resource appServicePlan 'Microsoft.Web/serverFarms@2021-03-01' = {
 }
 
 resource appServiceApp 'Microsoft.Web/sites@2021-03-01' = {
-  name: 'toy-product-launch-cayers'
+  name: 'build-with-bicep-cayers'
   location: 'eastus'
   properties: {
     serverFarmId: appServicePlan.id

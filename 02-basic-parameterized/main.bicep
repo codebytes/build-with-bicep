@@ -1,8 +1,8 @@
 param location string = 'eastus'
-param storageAccountName string = 'toylaunch${uniqueString(resourceGroup().id)}'
-param appServiceAppName string = 'toylaunch${uniqueString(resourceGroup().id)}'
+param storageAccountName string = 'bwbsa${uniqueString(resourceGroup().id)}'
+param appServiceAppName string = 'bwbas${uniqueString(resourceGroup().id)}'
 
-var appServicePlanName = 'toy-product-launch-plan'
+var appServicePlanName = 'bwb-plan'
 
 @allowed([
   'nonprod'
