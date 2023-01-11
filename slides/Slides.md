@@ -1,7 +1,7 @@
 ---
 marp: true
 theme: default
-footer: '@Chris_L_Ayers - https://chrislayers.com'
+footer: '@Chris_L_Ayers - https://chris-ayers.com'
 style: |
   table {
       display: table;
@@ -32,7 +32,7 @@ style: |
 
 - Twitter: @Chris\_L\_Ayers
 - LinkedIn: - [chris\-l\-ayers](https://linkedin.com/in/chris-l-ayers/)
-- Blog: [https://chrislayers\.com/](https://chrislayers.com/)
+- Blog: [https://chris-ayers\.com/](https://chris-ayers.com/)
 - GitHub: [Codebytes](https://github.com/codebytes)
 
 ---
@@ -205,7 +205,7 @@ ___
 ## Chris Ayers
 - Twitter: @Chris\_L\_Ayers
 - LinkedIn: - [chris\-l\-ayers](https://linkedin.com/in/chris-l-ayers/)
-- Blog: [https://chrislayers\.com/](https://chrislayers.com/)
+- Blog: [https://chris-ayers\.com/](https://chris-ayers.com/)
 - GitHub: [Codebytes](https://github.com/codebytes)
 
 </div>
