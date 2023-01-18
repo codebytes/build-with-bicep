@@ -13,7 +13,7 @@ style: |
     gap: 1rem;
   }
 
-  @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
+  @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css'
 
 ---
 
@@ -30,10 +30,11 @@ style: |
 ## Chris Ayers
 ### Senior Customer Engineer<br>Microsoft
 
-- Twitter: @Chris\_L\_Ayers
-- LinkedIn: - [chris\-l\-ayers](https://linkedin.com/in/chris-l-ayers/)
-- Blog: [https://chris-ayers\.com/](https://chris-ayers.com/)
-- GitHub: [Codebytes](https://github.com/codebytes)
+<i class="fa-brands fa-twitter"></i> Twitter: @Chris\_L\_Ayers
+<i class="fa-brands fa-mastodon"></i> Mastodon: @Chrisayers@hachyderm.io
+<i class="fa-brands fa-linkedin"></i> LinkedIn: - [chris\-l\-ayers](https://linkedin.com/in/chris-l-ayers/)
+<i class="fa fa-window-maximize"></i> Blog: [https://chris-ayers\.com/](https://chris-ayers.com/)
+<i class="fa-brands fa-github"></i> GitHub: [Codebytes](https://github.com/codebytes)
 
 ---
 
@@ -203,10 +204,12 @@ ___
 <div>
 
 ## Chris Ayers
-- Twitter: @Chris\_L\_Ayers
-- LinkedIn: - [chris\-l\-ayers](https://linkedin.com/in/chris-l-ayers/)
-- Blog: [https://chris-ayers\.com/](https://chris-ayers.com/)
-- GitHub: [Codebytes](https://github.com/codebytes)
+
+<i class="fa-brands fa-twitter"></i> Twitter: @Chris\_L\_Ayers
+<i class="fa-brands fa-mastodon"></i> Mastodon: @Chrisayers@hachyderm.io
+<i class="fa-brands fa-linkedin"></i> LinkedIn: - [chris\-l\-ayers](https://linkedin.com/in/chris-l-ayers/)
+<i class="fa fa-window-maximize"></i> Blog: [https://chris-ayers\.com/](https://chris-ayers.com/)
+<i class="fa-brands fa-github"></i> GitHub: [Codebytes](https://github.com/codebytes)
 
 </div>
 
