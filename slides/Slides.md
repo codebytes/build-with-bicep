@@ -21,7 +21,8 @@ style: |
 
 ![auto](./img/bicep-logo.png)
 # Building in the Cloud with Bicep
-## Chris Ayers
+
+# Chris Ayers ![w:120](img/head-shoulders-transparent.png)
 
 ---
 
@@ -190,7 +191,8 @@ ___
 
 ---
 
-# Resources
+# Resources 
+
 
 <div class="columns">
 <div>
@@ -203,7 +205,7 @@ ___
 </div>
 <div>
 
-## Chris Ayers
+## Chris Ayers 
 
 <i class="fa-brands fa-twitter"></i> Twitter: @Chris\_L\_Ayers
 <i class="fa-brands fa-mastodon"></i> Mastodon: @Chrisayers@hachyderm.io
