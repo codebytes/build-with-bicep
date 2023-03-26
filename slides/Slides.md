@@ -22,11 +22,11 @@ style: |
 ![auto](./img/bicep-logo.png)
 # Building in the Cloud with Bicep
 
-# Chris Ayers ![w:120](img/head-shoulders-transparent.png)
+# Chris Ayers ![w:120](img/portrait.png)
 
 ---
 
-![bg left:40%](./img/portrait.jpg)
+![bg left:40%](./img/portrait.png)
 
 ## Chris Ayers
 ### Senior Customer Engineer<br>Microsoft
@@ -85,7 +85,7 @@ Infrastructure as Code (IaC) is the managing and provisioning of infrastructure 
 
 ---
 
-![bg fit](./img/imp-vs-decl.png)
+![bg 80% ](./img/imp-vs-decl.png)
 
 ---
 
