@@ -52,7 +52,7 @@ jobs:
     steps:
      # Checkout code
     - name: Download bicep
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         name: bicep
         path: bicep
@@ -76,7 +76,7 @@ jobs:
         failOnStdErr: false
    
     - name: Download App
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         name: app  
         path: app
