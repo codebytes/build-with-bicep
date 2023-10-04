@@ -2,20 +2,8 @@
 marp: true
 theme: default
 footer: '@Chris_L_Ayers - https://chris-ayers.com'
-style: |
-  table {
-      display: table;
-      width: 100%;
-  }
-  .columns {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-  }
-
-  @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css'
-
 ---
+
 <!-- _footer: 'https://github.com/Codebytes/build-with-bicep' -->
 
 ![bg left:40%](./img/background.jpg)
