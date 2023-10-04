@@ -1,6 +1,6 @@
 ---
 marp: true
-theme: default
+theme: custom-default
 footer: '@Chris_L_Ayers - https://chris-ayers.com'
 ---
 
