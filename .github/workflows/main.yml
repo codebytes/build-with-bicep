@@ -38,11 +38,11 @@ jobs:
       run: dotnet publish -c Release ${{ env.project }} -o webapp
       working-directory: ${{ env.path }}
     - name: Upload artifact for deployment job
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: app
         path: ${{ env.path }}/webapp
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v5
       with:
         name: bicep
         path: ${{ env.path }}/bicep      
