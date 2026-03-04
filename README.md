@@ -1,6 +1,6 @@
 # Build with Bicep
 
-This repository contains the slide deck, demos, and pipelines for the "Building in the Cloud with Bicep" talk by Chris Ayers, Senior Customer Engineer at Microsoft. The talk provides an in-depth look at Bicep, a domain-specific language (DSL) for deploying Azure resources declaratively, and its usage in various scenarios.
+This repository contains the slide deck, demos, and pipelines for the "Building in the Cloud with Bicep" talk by Chris Ayers, Principal Software Engineer at Microsoft. The talk provides an in-depth look at Bicep, a domain-specific language (DSL) for deploying Azure resources declaratively, and its usage in various scenarios.
 
 ## Slides
 
