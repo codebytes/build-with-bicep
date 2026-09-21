@@ -1,31 +1,23 @@
-# Build with Bicep
+# Building in the Cloud with Bicep
 
-This repository contains the slide deck, demos, and pipelines for the "Building in the Cloud with Bicep" talk by Chris Ayers, Principal Software Engineer at Microsoft. The talk provides an in-depth look at Bicep, a domain-specific language (DSL) for deploying Azure resources declaratively, and its usage in various scenarios.
+Explore declarative Azure infrastructure with Bicep. This talk includes slides, demos, and pipelines covering parameters, modules, loops, and CI/CD.
 
 ## Slides
 
-You can access the slides for the talk at [Building in the Cloud with Bicep Slides](https://chris-ayers.com/build-with-bicep/) or [https://chris-ayers.com/build-with-bicep/](https://chris-ayers.com/build-with-bicep/).
-
-## Demos and Pipelines
-
-The repository includes a variety of demos and pipelines to demonstrate the use of Bicep in different scenarios. These demos and pipelines can help you understand how to implement Bicep effectively and take advantage of its features.
+[View HTML slides](https://chris-ayers.com/build-with-bicep/) | [Download PDF](https://chris-ayers.com/build-with-bicep/Slides.pdf)
 
 ## Resources
 
-For more information on Bicep and Infrastructure as Code (IaC), you can refer to the following resources:
-
+- [Slide source](slides/Slides.md)
+- [Basic deployment demo](00-basic-sa/) and [CI/CD sample](15-ci-cd/) with [example workflows](.github/workflows/)
 - [Bicep Documentation](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview)
 - [LearnLive IaC and Bicep Event](https://docs.microsoft.com/en-us/events/learntv/learnlive-iac-and-bicep/)
 
-## Connect with Chris Ayers
+## Contact
 
-Feel free to connect with Chris Ayers on social media and visit his blog for more information on Bicep and other topics:
+**Chris Ayers**, Principal Software Engineer
 
-- Twitter: [@Chris_L_Ayers](https://twitter.com/Chris_L_Ayers)
-- Mastodon: [@Chrisayers@hachyderm.io](https://hachyderm.io/@Chrisayers)
-- LinkedIn: [chris-l-ayers](https://linkedin.com/in/chris-l-ayers/)
-- Blog: [https://chris-ayers.com/](https://chris-ayers.com/)
-- GitHub: [Codebytes](https://github.com/codebytes)
+[Blog](https://chris-ayers.com/) | [GitHub](https://github.com/codebytes) | [LinkedIn](https://linkedin.com/in/chris-l-ayers/) | [Bluesky](https://bsky.app/profile/chris-ayers.com) | [Mastodon](https://hachyderm.io/@Chrisayers) | [Twitter](https://twitter.com/Chris_L_Ayers)
 
 ## License
 
