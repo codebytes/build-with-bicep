@@ -19,7 +19,7 @@ footer: 'Chris Ayers - [chris-ayers.com](https://chris-ayers.com/)'
 
 ## Chris Ayers
 
-### Principal Software Engineer<br>Azure CXP AzRel<br>Microsoft
+### Principal Software Engineer<br>Azure EngOps AzRel<br>Microsoft
 
 <i class="fa-brands fa-bluesky"></i> BlueSky: [@chris-ayers.com](https://bsky.app/profile/chris-ayers.com)
 <i class="fa-brands fa-linkedin"></i> LinkedIn: [chris\-l\-ayers](https://linkedin.com/in/chris-l-ayers/)
