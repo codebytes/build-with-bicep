@@ -6,6 +6,10 @@ Explore declarative Azure infrastructure with Bicep. This talk includes slides, 
 
 [View HTML slides](https://chris-ayers.com/build-with-bicep/) | [Download PDF](https://chris-ayers.com/build-with-bicep/Slides.pdf)
 
+## Recordings
+
+- [Come Cloud With Us](https://www.youtube.com/watch?v=wqG29Gck0ZY)
+
 ## Resources
 
 - [Slide source](slides/Slides.md)
